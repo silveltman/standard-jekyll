@@ -1,0 +1,16 @@
+title: ""
+lang: "nl"
+url: ""
+logo: ""
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -1,0 +1,106 @@
+$body-color: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$black-30: rgb(30, 30, 30);
+$black-60: rgb(60, 60, 60);
+$white: rgb(255, 255, 255);
+$white-240: rgb(240, 240, 240);
+$white-220: rgb(220, 220, 220);
+
+
+@mixin border-radius($property) {
+  -webkit-border-radius: $property;
+  -moz-border-radius: $property;
+  border-radius: $property;
+}
+
+@mixin transition($property) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+.C:target {
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+input, textarea, button, select, a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.botfield {
+  display: none;
+}
+
+main {
+  min-height: 100vh;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+p {
+
+}
+
+.container {
+  width: calc(100% - 30px);
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 690px;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  .container {
+    max-width: 930px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .container {
+    max-width: 1100px;
+  }
+
+}
