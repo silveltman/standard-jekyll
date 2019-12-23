@@ -1,13 +1,10 @@
 input:
 
 - titel: Voornaam
-  name: voornaam
   required: true
 
-- title: Achternaam
-  name: achternaam
+- titel: Achternaam
   required: true
 
-- title: Telefoonnummer
-  name: telefoonnummer
+- titel: Telefoonnummer
   required: false
