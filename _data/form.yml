@@ -1,6 +1,6 @@
 input:
 
-- title: Voornaam
+- titel: Voornaam
   name: voornaam
   required: true
 
@@ -10,8 +10,4 @@ input:
 
 - title: Telefoonnummer
   name: telefoonnummer
-  required: false
-
-- title: E-mailadres
-  name: _replyto
   required: false

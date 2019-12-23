@@ -1,10 +1,14 @@
 <form class="form" method="post" action="" onsubmit="formSubmit()" >
   {% for item in site.data.form.input %}
     <div class="form__item">
-      <label class="form__label">{{ item.title }}:</label>
-      <input class="form__input" type="text" name="{{ item.name }}" {% if item.required == true %} required {% endif %}>
+      <label class="form__label">{{ item.titel }}:</label>
+      <input class="form__input" type="text" name="{{ item.titel }}" {% if item.required == true %} required {% endif %}>
     </div>
   {% endfor %}
+  <div class="form__item">
+    <label class="form__label">E-mailadres:</label>
+    <input class="form__input" type="text" name="_replyto" >
+  </div>
   <div class="form__item form__item--bericht">
     <label class="form__label">Bericht:</label>
     <textarea class="form__textarea" name="bericht" placeholder="Schrijf hier het bericht" required></textarea>
