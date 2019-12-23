@@ -1,19 +1,15 @@
-// $(document).ready(function(){
-//   $(window).scroll(function() {
-//     var top = $(document).scrollTop();
-//
-//     if (top > 0) {
-//       $(".nav--index").removeClass("nav--big");
-//       $(".nav__logo--index").removeClass("nav__logo--big");
-//       $(".nav__link--index").removeClass("nav__link--big");
-//     }
-//     else {
-//       $(".nav--index").addClass("nav--big");
-//       $(".nav__logo--index").addClass("nav__logo--big");
-//       $(".nav__link--index").addClass("nav__link--big");
-//     }
-//   });
-// });
+$(function(){
+  $(window).scroll(function() {
+    var top = $(document).scrollTop();
+
+    if (top > 0) {
+      $(".nav--index").removeClass("nav--big");
+    }
+    else {
+      $(".nav--index").addClass("nav--big");
+    }
+  });
+});
 
 function navMenu() {
   var icon = document.getElementById("nav-icon");
@@ -27,6 +23,10 @@ function navMenu() {
     $(".side-nav").removeClass("side-nav--open");
     $(".shadow-nav").removeClass("shadow-nav--open");
   }
+};
+
+function formSubmit() {
+  alert("done");
 };
 
 // var slideIndex = 1;

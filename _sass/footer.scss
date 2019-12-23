@@ -1,0 +1,39 @@
+$footer-background: black;
+
+.footer {
+  background: $footer-background;
+  display: grid;
+  grid-template-columns: 300px;
+  grid-gap: 30px 90px;
+  justify-content: center;
+  padding: 50px 0 20px;
+
+  &__col-1 {
+
+  }
+  &__col-2 {
+
+  }
+
+  &__foot {
+
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    grid-template-columns: 300px 300px;
+
+    &__foot {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}

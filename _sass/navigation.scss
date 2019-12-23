@@ -1,7 +1,14 @@
-$nav-background: red;
+$nav-background: black;
 $nav-height-1: 50px;
 $nav-height-2: 70px;
 $nav-height-3: 120px;
+$nav-color: white;
+$nav-font-size: 20px;
+$nav-font-family: calibri;
+$nav-margin: 0 0 0 30px;
+$nav-hover: rgb(35, 35, 35);
+$nav-active: 3px solid red;
+$side-nav-hover: rgb(35, 35, 35);
 
 .nav {
   z-index: 9;
@@ -21,7 +28,6 @@ $nav-height-3: 120px;
   &__item {
     float: left;
     height: 100%;
-    padding: 0 10px;
   }
 
   &__link {
@@ -31,6 +37,7 @@ $nav-height-3: 120px;
   &__logo {
     img {
       height: 100%;
+      padding: 5px;
     }
   }
 
@@ -74,9 +81,15 @@ $nav-height-3: 120px;
   &__link {
     display: block;
     width: 200px;
-  }
+    padding: 10px 20px;
+    font-family: $nav-font-family;
+    font-size: $nav-font-size;
+    color: $nav-color;
+    border-top: 1px solid $nav-color;
 
-  &__link:hover {
+    &:hover {
+      background: $side-nav-hover;
+    }
   }
 }
 
@@ -89,14 +102,13 @@ $nav-height-3: 120px;
   z-index: 7;
   visibility: hidden;
   opacity: 0;
-  @include transition(visibility 0.2s opacity 0.2s);
+  @include transition(opacity 0.2s);
 
   &--open {
     visibility: visible;
     opacity: 0.7;
   }
 }
-
 
 #nav-icon {
   width: 40px;
@@ -107,7 +119,7 @@ $nav-height-3: 120px;
 }
 
 #nav-icon span {
-  background: $black;
+  background: $nav-color;
   display: block;
   position: absolute;
   height: 4px;
@@ -161,42 +173,46 @@ $nav-height-3: 120px;
   }
   .nav {
     height: $nav-height-2;
+    @include transition(height 0.2s);
 
-    &--open {
-
+    &--big {
+      height: $nav-height-3;
     }
 
-    &--index {
-
-    }
-
-    &__list {
-      max-width: 930px;
-      margin: 0 auto;
+    &__logo {
+      img {
+        padding: 10px;
+      }
     }
 
     &__link {
+      font-family: $nav-font-family;
+      font-size: $nav-font-size;
+      color: $nav-color;
+      margin: $nav-margin;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       height: 100%;
-      background: green;
+      padding: 15px;
+      right: 0;
 
-      &--index {
-
+      &--right {
+        position: absolute;
+        right: 0;
       }
-      &--big {
 
+      &--active {
+        border-bottom: $nav-active;
+      }
+
+      &:hover {
+        background: $nav-hover;
       }
     }
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .nav {
-    &__list {
-      max-width: 1100px;
-    }
-  }
 }

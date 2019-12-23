@@ -1,12 +1,12 @@
-title: ""
+title: "Hello standard!"
 lang: "nl"
-url: ""
-logo: ""
+url: "https://jouw-website.html"
+logo: "/assets/img/logo.png"
+logo-alt: Hello Logo
 permalink: pretty
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"

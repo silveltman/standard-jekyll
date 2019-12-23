@@ -1,17 +1,19 @@
 <nav class="nav {% if page.name == 'index.html' %}nav--index nav--big{% endif %}">
   <ul class="nav__list">
-        <li class="nav__item nav__item--logo">
-          <a class="nav__logo {% if page.name == 'index.html' %}nav__logo--index nav__logo--big {% endif %}" href="{{ site.data.navigation.index.url }}">
-            <img src="/assets/img/logo.png" alt="">
-          </a>
-        </li>
-      {% for item in site.data.navigation.page %}
-        <li class="nav__item">
-          <a class="nav__link {% if page.name == 'index.html' %}nav__link--index nav__link--big {% endif %}" href="{{ item.url }}">
-            {{ item.title }}
-          </a>
-        </li>
-     {% endfor %}
+    <li class="nav__item nav__item--logo">
+      <a class="nav__logo" href="/">
+        <img src="{{ site.logo }}" alt="{{ site.logo-alt }}">
+      </a>
+    </li>
+    {% for item in site.data.navigation.link %}
+      <li class="nav__item">
+        <a class="nav__link {% if item.right == true %} nav__link--right {% endif %}{% if item.url == page.url %} nav__link--active {% endif %}" href="{{ item.url }}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+
+
      <button class="nav__menu" onclick="navMenu()">
        <div id="nav-icon">
          <span></span>
@@ -25,7 +27,7 @@
 <div class="side-nav">
   <ul class="side-nav__list">
     {% for item in site.data.navigation.link %}
-        <li class="side-nav__item"><a class="side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+        <li class="side-nav__item"><a class="side-nav__link {% if item.url == page.url %} side-nav__link--active {% endif %}" href="{{ item.url }}">{{ item.title }}</a></li>
      {% endfor %}
   </ul>
 </div>
