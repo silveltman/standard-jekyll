@@ -1,10 +1,11 @@
 input:
-
-- titel: Voornaam
-  required: true
-
-- titel: Achternaam
-  required: true
-
-- titel: Telefoonnummer
-  required: false
+  - titel: Voornaam
+    required: true
+  - titel: Achternaam
+    required: true
+  - titel: Telefoonnummer
+    required: false
+  - titel: Geboortedatum
+    required: false
+  - titel: Geboorteplaats
+    required: true
