@@ -1,0 +1,92 @@
+# Media presets are just named css media queries, used in several places:
+# - To specify alternate source images (for art direction)
+# - To build the 'sizes' attribute
+# - When given alternate source images, specify which sizes to generate.
+media_presets:
+  XL: 'min-width: 1201px'
+  L: 'max-width: 1200px'
+  M: 'max-width: 992px'
+  S: 'max-width: 768px'
+  XS: 'max-width: 510px'
+
+# Markup presets allow you to group settings together, and select one of them by
+# name in your jekyll tag. All settings are optional.
+markup_presets:
+
+  default:
+    # img(1 srcset) of picture?
+    # Gebruik data_auto voor js, bijvoorbeeld lazy loading
+    markup: auto
+
+    # =array, waarin de volgorde er toe doet
+    formats: [webp, original]
+
+    # =array. default - 200,400,800,1600
+    widths: [400, 600, 800, 1000]
+
+    # =array. Gebruikt voor art direction in combinatie met media_presets. default = widhts
+    media_widths:
+      XS:
+      S:
+      M:
+      L:
+      XL:
+    # sizes voor in html. Moet van klein naar groot. PX/VW
+    sizes:
+      XS:
+      S:
+      M:
+      L:
+      XL:
+
+    # Singe size setting. Kan zonder of met sizes. size komt altijd na sizes.
+    size:
+
+    # This allows you to specify quality settings for various image formats
+    format_quality:
+      jpg: 75
+      png: 65
+      webp: 55
+
+    # Parent gaat naar picture als die er is, anders naar img. Kunnen ook apart worden geset.
+    # Kan alles zijn, bijv: function, a, alt, title, etc.
+    attributes:
+      parent: 'class="myclass"'
+      alt:
+      link:
+
+  # This is an example of how you would create a 'multiplier' based srcset;
+  # useful when an image will always be the same size on all screens (icons,
+  # graphics, thumbnails, etc), but you'd like to supply higher resolution
+  # images to devices with higher pixel ratios.
+  icon:
+    base_width: 20 # How wide the 1x image should be
+    pixel_ratios: [1, 1.5, 2]
+    fallback_width: 20
+    attributes:
+      img: 'class="icon"'
+
+  # Here's an example of how you'd configure jekyll-picture-tag to work with
+  # something like lazyload:
+  # https://github.com/verlok/lazyload
+  lazy:
+    # data_auto gives you data-src, data-srcset, and data-sizes instead of src,
+    # srcset, and sizes:
+    markup: data_auto
+    formats: [webp, original]
+    widths: [200, 400, 600, 800]
+    noscript: true # add a fallback image inside a <noscript> tag.
+    attributes:
+      img: class="lazy"
+
+  # This is an example of how you'd get generated image and a URL, and nothing
+  # else.
+  direct:
+    markup: direct_url
+    fallback_format: webp # Default original
+    fallback_width: 600 # Default 800
+
+  # Here's a naked srcset. Doesn't even give you the surrounding quotes.
+  srcset:
+    markup: naked_srcset
+    formats: [webp] # must be an array, even if it only has one item

@@ -1,8 +1,8 @@
-title: "Hello standard!"
+title: " "
 lang: "nl"
 url: "https://jouw-website.html"
-logo: "/assets/img/logo.png"
-logo-alt: Hello Logo
+logo: "/assets/img/logo.svg"
+logo-alt: " "
 permalink: pretty
 
 defaults:

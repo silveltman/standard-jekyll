@@ -1,9 +1,10 @@
 link:
 
+- title: Home
+  url: /
+
 - title: About
   url: /about
-  right: false
 
 - title: Contact
   url: /contact
-  right: false

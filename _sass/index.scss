@@ -1,36 +1,17 @@
-.index-masterhead {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgb(181, 180, 224);
-  height: 500px;
-}
 
-.index-info {
-  display: grid;
-  grid-gap: 70px;
-  grid-template-columns: 100%;
-  padding: 70px 0;
+
+@media (min-width: 576px) {
+
 }
 
 @media (min-width: 768px) {
 
 }
 
-@media only screen and (min-width: 992px) {
-  .index-info {
-    grid-gap: 100px;
-    grid-template-columns: 1fr 1fr;
-    padding: 100px 0;
+@media (min-width: 992px) {
 
-    &__col {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
 
 }
