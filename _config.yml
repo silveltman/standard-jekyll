@@ -4,7 +4,7 @@ url: "https://jouw-website.nl"
 logo: "/assets/img/logo.svg"
 logo-alt: " "
 permalink: pretty
-timezone: Europe/Amsterdam
+# timezone: Europe/Amsterdam
 
 
 defaults:
