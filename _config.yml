@@ -5,6 +5,11 @@ logo: "/assets/img/logo.svg"
 logo-alt: " "
 google_site_verification:      #search console
 
+exclude: [node_modules, README.md]
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 defaults:
   - scope:
@@ -15,23 +20,6 @@ defaults:
         title: Paginatitel voor in Google (maximaal 60 tekens minus het aantal tekens in de bedrijfsnaam)
         description: Paginabeschrijving voor in Google/SEO (50-160 tekens)
         alt: Beschrijving van de afbeelding - max 10 woorden
-
-_explore:
-  groups:
-    - heading: Pagina's
-      collections:
-        - pages
-
-uploads_dir: "/assets/img/uploads/:title"
-
-picture:
-  output: "assets/img/picture-generated"
-  ignore_missing_images: true
-  fast_build: [development]
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
 
 # collections:
 #   collection1:
