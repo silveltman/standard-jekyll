@@ -11,6 +11,23 @@ defaults:
       path: ""
     values:
       layout: "default"
+      _comments:
+        title: Paginatitel voor in Google (maximaal 60 tekens minus het aantal tekens in de bedrijfsnaam)
+        description: Paginabeschrijving voor in Google/SEO (50-160 tekens)
+        alt: Beschrijving van de afbeelding - max 10 woorden
+
+_explore:
+  groups:
+    - heading: Pagina's
+      collections:
+        - pages
+
+uploads_dir: "/assets/img/uploads/:title"
+
+picture:
+  output: "assets/img/picture-generated"
+  ignore_missing_images: true
+  fast_build: [development]
 
 plugins:
   - jekyll-seo-tag
