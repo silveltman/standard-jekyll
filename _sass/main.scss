@@ -1,6 +1,91 @@
-$bodyFont: " ";
-$bodyBackground: ;
-$bodycolor: ;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* self added */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	min-height: 100vh; /* self added */
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+$mainFont: "Calibri";
+$mainBg: black;
+$mainColor: white;
+
+@mixin screen($size) {
+  $media1: (min-width: 576px);
+  $media2: (min-width: 768px);
+  $media3: (max-width: 992px);
+	$media4: (max-width: 1200px);
+
+  @if $size == 1 {
+    @media only screen and #{$media1} {
+      @content;
+    }
+  }
+  @else if $size == 2 {
+    @media only screen and #{$media2} {
+      @content;
+    }
+  }
+  @else if $size == 3 {
+    @media only screen and #{$media3} {
+      @content;
+    }
+	}
+	@else if $size == 4 {
+		@media only screen and #{$media4} {
+			@content;
+		}
+	}
+}
 
 
 @mixin border-radius($property) {
@@ -28,28 +113,10 @@ $bodycolor: ;
   box-shadow: $property;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: $bodyFont;
-  background: $bodyBackground;
-  color: $bodyColor;
-}
-
-input, textarea, button, select, a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-button {
-  outline: 0;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
+  font-family: $mainFont;
+  background: $mainBg;
+  color: $mainColor;
 }
 
 h1 {
@@ -65,24 +132,24 @@ p {
 
 @media (min-width: 576px) {
   .container {
-    max-width: 510px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 690px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 930px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1100px;
+    max-width: 1140px;
   }
 }

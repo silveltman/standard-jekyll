@@ -1,9 +1,10 @@
-title: " "
+title: "HelloWorld"
 lang: "nl"
-url: "https://jouw-website.nl"
+url: "https://mywebsite.nl"
 logo: "/assets/img/logo.svg"
 logo-alt: " "
-permalink: pretty
+google_site_verification:      #search console
+
 
 defaults:
   - scope:
@@ -14,3 +15,29 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# collections:
+#   collection1:
+#     output: false
+#     _hide_content: true
+#   collection2:
+#     output: false
+#     _hide_content: true
+
+picture:
+  output: "assets/img/picture-generated"
+  ignore_missing_images: development
+  fast_build: [development]
+  suppress_warnings: true
+  # disabled: development
+
+# Cloudcannon
+uploads_dir: "/assets/img/uploads/:title"
+_explore:
+  groups:
+    - heading: Pagina's
+      collections:
+        - pages
+    - heading: Inhoud
+      collections:
+        - collections
