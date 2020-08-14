@@ -2,7 +2,7 @@
 # - To specify alternate source images (for art direction)
 # - To build the 'sizes' attribute
 # - When given alternate source images, specify which sizes to generate.
-media_presets:
+media_queries:
   XL: 'min-width: 1201px'
   L: 'max-width: 1200px'
   M: 'max-width: 992px'
@@ -11,7 +11,7 @@ media_presets:
 
 # Markup presets allow you to group settings together, and select one of them by
 # name in your jekyll tag. All settings are optional.
-markup_presets:
+presets:
 
   default:
     # img(1 srcset) of picture?
