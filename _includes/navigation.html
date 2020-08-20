@@ -1,15 +1,50 @@
-<nav class="nav {% if page.name == 'index.html' %}nav--index nav--big{% endif %}">
-  <a class="nav__logo" href="/">
+<header class="header">
+  <a class="header__logo" href="/">
     <img src="{{ site.logo }}" alt="{{ site.logo-alt }}">
   </a>
 
-  <ul class="nav__list">
+  <nav class="nav">
     {% for item in site.data.navigation.link %}
-      <li class="nav__item">
-        <a class="nav__link {% if item.right == true %} nav__link--right {% endif %}{% if item.url == page.url %} nav__link--active {% endif %}" href="{{ item.url }}">
-          {{ item.title }}
-        </a>
-      </li>
+      {% if item.dropdown %}
+        <div class="nav__dropdown">
+          <a class="nav__link" {% if item.url %} href="{{item.url}}" {% endif %}>{{item.title}}</a>
+          <div class="nav__dropdown-content">
+            {% for dropdown in item.dropdown %}
+              <a class="nav__dropdown-link" href="{{dropdown.url}}">{{dropdown.title}}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        <a class="nav__link" href="{{item.url}}">{{item.title}}</a>
+      {% endif %}
     {% endfor %}
-   </ul>
+  </nav>
+</header>
+
+<nav class="mobile-nav">
+  <div class="mobile-nav__links" id="test">
+    {% for item in site.data.navigation.link %}
+      {% if item.url %}
+        <a class="mobile-nav__link" href="{{item.url}}">{{item.title}}</a>
+      {% endif %}
+      {% for dropdown in item.dropdown %}
+        <a class="mobile-nav__link" href="{{dropdown.url}}">{{dropdown.title}}</a>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="mobile-nav__bar">
+    <a class="mobile-nav__bar-item" href="#">
+      <i class="material-icons">category</i>
+      Home
+    </a>
+    <a class="mobile-nav__bar-item" href="#">
+      <i class="material-icons">category</i>
+      Contact
+    </a>
+    <button class="mobile-nav__bar-item mobile-nav__bar-item--menu" onclick="openNav()" type="button" name="button">
+      <i class="material-icons">category</i>
+      Menu
+    </button>
+  </div>
 </nav>

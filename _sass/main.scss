@@ -1,6 +1,6 @@
-$mainFont: "Calibri";
-$mainBg: black;
-$mainColor: white;
+$font: "calibri";
+$bg: #313132;
+$color: white;
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -33,8 +33,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-  text-decoration: none; /* self added */
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -71,8 +71,16 @@ input, textarea, button, select, a {
 /* self added */
 button {
   outline: 0;
+  background: 0;
+  border: 0;
   cursor: pointer;
+  font-family: $font;
 }
+
+a[href^="tel"], a[href^="mailto"] {
+  color: inherit; /* Inherit text color of parent element. */
+}
+
 
 @mixin media($size) {
   $media1: (min-width: 576px);
@@ -102,35 +110,10 @@ button {
 	}
 }
 
-@mixin border-radius($property) {
-  -webkit-border-radius: $property;
-  -moz-border-radius: $property;
-  border-radius: $property;
-}
-
-@mixin transition($property) {
-  -webkit-transition: $property;
-  -moz-transition: $property;
-  -o-transition: $property;
-  transition: $property;
-}
-@mixin transform($property) {
-  -webkit-transform: $property;
-  -moz-transform: $property;
-  -o-transform: $property;
-  transform: $property;
-}
-
-@mixin box-shadow($property) {
-  -webkit-box-shadow: $property;
-  -moz-box-shadow: $property;
-  box-shadow: $property;
-}
-
 body {
-  font-family: $mainFont;
-  background: $mainBg;
-  color: $mainColor;
+  font-family: $font;
+  background: $bg;
+  color: $color;
 }
 
 h1 {

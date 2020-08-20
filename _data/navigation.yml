@@ -3,5 +3,21 @@ link:
 - title: Home
   url: /
 
+- title: Producten
+  url:
+  dropdown:
+    - title: Product A
+      url: /
+    - title: Product B
+      url: /
+
+- title: Diensten
+  url: /
+  dropdown:
+    - title: Dienst A
+      url: /
+    - title: Dienst B
+      url: /
+
 - title: Contact
   url: /contact

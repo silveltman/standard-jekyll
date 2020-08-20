@@ -1,17 +1,138 @@
+$navBg: #161616;
+$navColor: white;
+$navHeight: 50px;
 
+.mobile-nav {
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 
-@media (min-width: 576px) {
+  @include media(3) {
+    display: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(50px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, transform .2s;
+    height: 0;
+
+    background: $navBg;
+
+    &.open {
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__link {
+    text-align: center;
+    text-decoration: none;
+
+    color: $navColor;
+    padding: 16px;
+
+    &:hover {
+      background: red;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    height: 60px;
+
+    background: $navBg;
+  }
+
+  &__bar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+
+    width: 80px;
+    color: $navColor;
+    font-size: 16px;
+
+    &:hover {
+      background: red;
+    }
+  }
+
 
 }
 
-@media (min-width: 768px) {
+.header {
+  display: none;
+  z-index: 9;
 
+  @include media(3) {
+    display: flex;
+    justify-content: space-between;
+
+    height: $navHeight;
+    background: $navBg;
+
+    &__logo {
+
+    }
+  }
 }
 
-@media (min-width: 992px) {
+.nav {
+  display: flex;
 
-}
+  &__dropdown {
+    overflow: hidden;
+    cursor: default;
+  }
 
-@media (min-width: 1200px) {
+  &__dropdown-content {
+    display: none;
+    position: absolute;
+    flex-direction: column;
 
+    background: $navBg;
+  }
+
+  &__dropdown-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    padding: 10px 20px;
+    color: $navColor;
+
+    &:hover {
+      background: red;
+    }
+  }
+
+  .nav__dropdown:hover .nav__dropdown-content {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    height: $navHeight;
+    color: $navColor;
+    padding: 0 20px;
+
+    &:hover {
+      background: red;
+    }
+  }
 }
