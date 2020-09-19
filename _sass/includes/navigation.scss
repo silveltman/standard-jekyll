@@ -68,8 +68,6 @@ $navHeight: 50px;
       background: red;
     }
   }
-
-
 }
 
 .header {
@@ -78,6 +76,8 @@ $navHeight: 50px;
 
   @include media(3) {
     display: flex;
+    position: fixed;
+    width: 100%;
     justify-content: space-between;
 
     height: $navHeight;
