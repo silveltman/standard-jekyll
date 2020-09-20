@@ -41,6 +41,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  position: relative; /* self added */
+  overflow-x: hidden; /* self added */
 	min-height: 100vh; /* self added */
 	line-height: 1;
 }
